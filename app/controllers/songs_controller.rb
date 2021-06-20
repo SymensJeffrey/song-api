@@ -17,7 +17,8 @@ class SongsController < ApplicationController
   end
 
   def show
-    render json: {message: "show"}
+    song = Song.find_by(id: params[:id])
+    render json: song.as_json
   end
 
   def update
