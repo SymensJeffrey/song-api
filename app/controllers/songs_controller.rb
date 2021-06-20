@@ -1,7 +1,8 @@
 class SongsController < ApplicationController
 
   def index
-    render json: {message: "Hello"}
+    song = Song.all 
+    render json: song.as_json
   end
 
   def create
