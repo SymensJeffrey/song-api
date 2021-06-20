@@ -7,4 +7,8 @@ class SongsController < ApplicationController
   def create
     render json: {message: "Create"}
   end
+
+  def show
+    render json: {message: "show"}
+  end
 end
