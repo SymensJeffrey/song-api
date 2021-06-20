@@ -15,4 +15,8 @@ class SongsController < ApplicationController
   def update
     render json: {message: "update"}
   end
+
+  def destroy
+    render json: {message: "destroy"}
+  end
 end
