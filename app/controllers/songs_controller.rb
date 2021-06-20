@@ -5,7 +5,14 @@ class SongsController < ApplicationController
   end
 
   def create
-    render json: {message: "Create"}
+    song = Song.new(
+      title: params[:title],
+      album: params[:album],
+      artist: params[:artist],
+      year: params[:year]
+    )
+    song.save
+    render json: song.as_json
   end
 
   def show
