@@ -22,7 +22,14 @@ class SongsController < ApplicationController
   end
 
   def update
-    render json: {message: "update"}
+    song = Song.find_by(id: params[:id])
+    song.update(
+      title: params[:title] || song.title,
+      album: params[:album] || song.album,
+      artist: params[:artist] || song.artist,
+      year: params[:year] || song.year
+    )
+    render json: song.as_json
   end
 
   def destroy
