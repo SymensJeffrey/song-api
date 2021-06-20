@@ -11,4 +11,8 @@ class SongsController < ApplicationController
   def show
     render json: {message: "show"}
   end
+
+  def update
+    render json: {message: "update"}
+  end
 end
